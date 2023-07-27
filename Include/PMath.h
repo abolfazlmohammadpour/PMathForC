@@ -16,7 +16,7 @@ void Calculating_NumberOfDivisors(long long int Number, long long int *NumberOfD
         {
             if ((Number % Counter) == (long long int)0)
             {
-                *NumberOfDivisors += 1;
+                *NumberOfDivisors += (long long int)1;
             }
         }
         return;
@@ -27,7 +27,7 @@ void Calculating_NumberOfDivisors(long long int Number, long long int *NumberOfD
         {
             if ((Number % Counter) == (long long int)0)
             {
-                *NumberOfDivisors += 1;
+                *NumberOfDivisors += (long long int)1;
             }
         }
         return;
