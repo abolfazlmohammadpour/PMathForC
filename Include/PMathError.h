@@ -3,6 +3,7 @@
 
 #define No_Error (unsigned short int)1383
 #define Error_1384 (unsigned short int)1384
+#define Error_1385 (unsigned short int)1385
 
 unsigned short int PMathError;
 PMathError = No_Error;
@@ -18,7 +19,11 @@ void Showing_PMathError(unsigned short int PMathError)
     }
     case Error_1384:
     {
-        printf("%c%s%c", '\a', "Error: From <Calculating_NumberOfDivisors> \"The Input Argument Does Not Have To Be Zero\".", '\n');
+        printf("%c%s%c", '\a', "Error: From <Calculating_NumberOfDivisors> \"The Argument <Number> Does Not Have To Be Zero\".", '\n');
+        break;
+    }
+    case Error_1385:
+    {
         break;
     }
     }
