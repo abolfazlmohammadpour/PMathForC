@@ -2,7 +2,9 @@
 
 ### What Is PMath?
 #### PMath Is An Open Source Professional Library Of Matehmatics For C.
+
 ---
+
 ### How To Use?
 #### For Using PMath In Your Project, First You Have To Clone PMath Repo In Your Project
 `git clone https://github.com/ABOLFAZLMOHAMMADPOUR/PMathForC.git`
@@ -32,9 +34,11 @@ int main(int argc, const char *argv[])
     return (int)0;
 }
 ```
+
 ---
-## How To Compile And Run Project
-### First You Have To Change The Current Directory To The Build Directory And Then Do Following Commands.
+
+### How To Compile And Run Project
+#### First You Have To Change The Current Directory To The Build Directory And Then Do Following Commands.
 Build/MakeFile(Windows)
 ```MakeFile
 .DEFAULT_GOAL := CreateAndRunExecutableOutput
@@ -63,8 +67,9 @@ CreateExecutableOutput:
 RunExecutableOutput:
 	@ .\..\Output\main.out
 ```
-(Windows)
-`mingw32-make -f .\MakeFile`
-(Linux)
-`make -f ./MakeFile`
+
+(Windows)`mingw32-make -f .\MakeFile`
+
+(Linux)`make -f ./MakeFile`
+
 ---
