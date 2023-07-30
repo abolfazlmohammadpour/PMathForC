@@ -73,3 +73,34 @@ RunExecutableOutput:
 (Linux)`make -f ./MakeFile`
 
 ---
+
+### Working With PMath
+#### PMath Is Contains Lots Of Functions Which You Can Doing Mathematics Operations With Them In Your Project.
+---
+
+### Calculating Number Of Divisors Of A Number With PMath
+main.c
+```c
+#include <stdio.h>
+
+#include "./../Include/PMath.h"
+
+int main(int argc, const char *argv[])
+{
+    long long int Number = (long long int)27;
+    long long int *NumberOfDivisors;
+
+    Calculating_NumberOfDivisors(Number, NumberOfDivisors);
+
+    printf("%s%lld%s%lld%c", "Number Of Divisors Of {", Number, "} Is : ", *NumberOfDivisors, '\n');
+
+    return (int)0;
+}
+```
+Output
+```
+Number Of Divisors Of {27} Is : 4
+```
+
+---
+
