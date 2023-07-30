@@ -79,7 +79,7 @@ RunExecutableOutput:
 ---
 
 ### Calculating Number Of Divisors Of A Number With PMath
-main.c
+Source/main.c
 ```c
 #include <stdio.h>
 
@@ -88,19 +88,58 @@ main.c
 int main(int argc, const char *argv[])
 {
     long long int Number = (long long int)27;
-    long long int *NumberOfDivisors;
+    long long int NumberOfDivisors;
 
-    Calculating_NumberOfDivisors(Number, NumberOfDivisors);
+    Calculating_NumberOfDivisors(Number, &NumberOfDivisors);
 
-    printf("%s%lld%s%lld%c", "Number Of Divisors Of {", Number, "} Is : ", *NumberOfDivisors, '\n');
+    printf("%s%lld%s%lld%c", "Number Of Divisors Of {", Number, "} Is : ", NumberOfDivisors, '\n');
 
     return (int)0;
 }
 ```
-Output
+Output/main.exe
 ```
 Number Of Divisors Of {27} Is : 4
 ```
 
 ---
+
+### Calculating Divisors Of A Number With PMath
+Source/main.c
+```c
+#include <stdio.h>
+
+#include "./../Include/PMath.h"
+
+int main(int argc, const char *argv[])
+{
+    long long int Number = (long long int)27;
+    long long int NumberOfDivisors;
+
+    Calculating_NumberOfDivisors(Number, &NumberOfDivisors);
+
+    long long int Divisors[NumberOfDivisors];
+
+    Calculating_Divisors(Number, Divisors);
+
+    printf("%s%lld%s%lld%c", "Number Of Divisors Of {", Number, "} Is : ", NumberOfDivisors, '\n');
+
+    printf("%s%lld%s", "Divisors Of {", Number, "} Are : [ ");
+    for (long long int Counter = (long long int)0; Counter < NumberOfDivisors; Counter++)
+    {
+        printf("%lld%c", (*(Divisors + Counter)), ' ');
+    }
+    printf("%c%c", ']', '\n');
+
+    return (int)0;
+}
+```
+Output\main.exe
+```
+Number Of Divisors Of {27} Is : 4
+Divisors Of {27} Are : [ 1 3 9 27 ]
+```
+
+---
+
 
