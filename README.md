@@ -68,9 +68,9 @@ RunExecutableOutput:
 	@ .\..\Output\main.out
 ```
 
-(Windows)`mingw32-make -f .\MakeFile`
+(Windows)          `mingw32-make -f .\MakeFile`
 
-(Linux)`make -f ./MakeFile`
+(Linux)            `make -f ./MakeFile`
 
 ---
 
