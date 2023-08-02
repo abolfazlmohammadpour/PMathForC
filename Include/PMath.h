@@ -69,3 +69,51 @@ void Calculating_Divisors(long long int Number, long long int *Divisors)
         return;
     }
 }
+
+// This Function Calculates Multiples Of Argument Number From Argument <From> To Argument <To> And Places Them In Argument <Multiples>
+void Calculating_Multiples(long long int Number, long long int From, long long int To, long long int *Multiples)
+{
+    if (Number == (long long int)0)
+    {
+        Exiting_WithError(Error_1386);
+        return;
+    }
+    else if (Number > (long long int)0)
+    {
+        if (From >= To)
+        {
+            Exiting_WithError(Error_1387);
+            return;
+        }
+        else
+        {
+            long long int IndexOfMultiple = (long long int)0;
+
+            for (long long int Counter = From; Counter <= To; Counter++)
+            {
+                *(Multiples + IndexOfMultiple) = (Number * Counter);
+                IndexOfMultiple++;
+            }
+            return;
+        }
+    }
+    else
+    {
+        if (From >= To)
+        {
+            Exiting_WithError(Error_1387);
+            return;
+        }
+        else
+        {
+            long long int IndexOfMultiple = (long long int)0;
+
+            for (long long int Counter = From; Counter <= To; Counter++)
+            {
+                *(Multiples + IndexOfMultiple) = (Number * Counter);
+                IndexOfMultiple++;
+            }
+            return;
+        }
+    }
+}
