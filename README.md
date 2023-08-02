@@ -118,7 +118,7 @@ int main(int argc, const char *argv[])
 
     Calculating_NumberOfDivisors(Number, &NumberOfDivisors);
 
-    long long int Divisors[NumberOfDivisors];
+    long long int Divisors[NumberOfDivisors] = {(long long int)0};
 
     Calculating_Divisors(Number, Divisors);
 
