@@ -142,4 +142,39 @@ Divisors Of {27} Are : [ 1 3 9 27 ]
 
 ---
 
+### Calculating Multiples Of A Number With PMath
+Source/main.c
+```c
+#include <stdio.h>
+
+#include "./../Include/PMath.h"
+
+int main(int argc, const char *argv[])
+{
+    long long int Number = (long long int)10;
+    long long int From = (long long int)-5;
+    long long int To = (long long int)4;
+    long long int Multiples[(long long int)10] = {(long long int)0};
+
+    Calculating_Multiples(Number, From, To, Multiples);
+
+    printf("%s%lld%s%lld%s%lld%s", "Multiples Of {", Number, "} From <", From, "> To <", To, "> Are : [");
+    for (long long int Counter = (long long int)0; Counter < (long long int)10; Counter++)
+    {
+        printf("%lld%c", Multiples[Counter], ' ');
+    }
+    printf("%s%c", "]", '\n');
+
+    return (int)0;
+}
+```
+Output/main.exe
+```
+Multiples Of {10} From <-5> To <4> Are : [-50 -40 -30 -20 -10 0 10 20 30 40 ]
+```
+
+---
+
+
+
 
