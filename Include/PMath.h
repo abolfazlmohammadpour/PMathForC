@@ -117,3 +117,19 @@ void Calculating_Multiples(long long int Number, long long int From, long long i
         }
     }
 }
+
+// This Function Will Calcuate Arithmetic Mean Of The Numbers List. At The First Argument This Function Will Take The List Of Numbers And In The Second Will Take The Length Of The List Of Numbers And Finally Will Return The Arithmetic Mean
+long double Calculating_ArithmeticMean(long double *Numbers, long long int NumberOfNumbers)
+{
+    long double SumOfNumbers = (long double)0.0;
+    long double ArithmeticMeanOfNumbers = (long double)0.0;
+
+    for (long long int Counter = (long long int)0; Counter < NumberOfNumbers; Counter += (long long int)1)
+    {
+        SumOfNumbers += *(Numbers + Counter);
+    }
+
+    ArithmeticMeanOfNumbers = SumOfNumbers / NumberOfNumbers;
+
+    return ArithmeticMeanOfNumbers;
+}
