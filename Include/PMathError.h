@@ -38,6 +38,10 @@ void Showing_PMathError(unsigned short int PMathError)
         printf("%c%s%c", '\a', "Error: From <Calculating_Multiples> \"The Argument <From> Does Not Have To Be Greater Than Argument <To> Or Equal\".", '\n');
         break;
     }
+    default:
+    {
+        printf("%c%s%c", '\a', "Error : The Errro Code Not Supported.", '\n');
+    }
     }
 }
 
