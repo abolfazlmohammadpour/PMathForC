@@ -1,4 +1,4 @@
-## PMath(ProfessionalMathematics), Version 0.1
+## PMath(ProfessionalMathematics), Version 0.2
 
 ### What Is PMath?
 #### PMath Is An Open Source Professional Library Of Matehmatics For C.
@@ -97,7 +97,7 @@ int main(int argc, const char *argv[])
     return (int)0;
 }
 ```
-Output/main.exe
+Output/main.out
 ```
 Number Of Divisors Of {27} Is : 4
 ```
@@ -134,7 +134,7 @@ int main(int argc, const char *argv[])
     return (int)0;
 }
 ```
-Output\main.exe
+Output\main.out
 ```
 Number Of Divisors Of {27} Is : 4
 Divisors Of {27} Are : [ 1 3 9 27 ]
@@ -168,12 +168,53 @@ int main(int argc, const char *argv[])
     return (int)0;
 }
 ```
-Output/main.exe
+Output/main.out
 ```
 Multiples Of {10} From <-5> To <4> Are : [-50 -40 -30 -20 -10 0 10 20 30 40 ]
 ```
 
 ---
+
+### Calculating ArithmeticMean Of Numners With PMath
+Source/main.c
+```c
+#include <stdio.h>
+
+#include "./../Include/PMath.h"
+
+int main(int argc, const char *argv[])
+{
+    long long int NumberOfNumbers = (long long int)5;
+    long double Numbers[5] = {(long double)10.0, (long double)20.0, (long double)30.0, (long double)37.6, (long double)85.3};
+    long double TheArithmeticMean = (long double)0.0;
+
+    printf("%s", "The Arithmetic Mean Of (");
+    for (long long int Counter = (long long int)0; Counter < NumberOfNumbers; Counter += (long long int)1)
+    {
+        if (((Counter + (long long int)1) == NumberOfNumbers))
+        {
+            printf("%Lf%s", Numbers[Counter], ")");
+        }
+        else
+        {
+            printf("%Lf%s", Numbers[Counter], ", ");
+        }
+    }
+    printf("%s", " Is : ");
+
+    TheArithmeticMean = Calculating_ArithmeticMean(Numbers, NumberOfNumbers);
+    printf("%Lf%c", TheArithmeticMean, '\n');
+
+    return (int)0;
+}
+```
+Output/main.out
+```
+The Arithmetic Mean Of (10.000000, 20.000000, 30.000000, 37.600000, 85.300000) Is : 36.580000
+```
+
+---
+
 
 
 
