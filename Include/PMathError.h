@@ -6,6 +6,8 @@
 #define Error_1385 (unsigned short int)1385
 #define Error_1386 (unsigned short int)1386
 #define Error_1387 (unsigned short int)1387
+#define Error_1388 (unsigned short int)1388
+#define Error_1389 (unsigned short int)1389
 
 unsigned short int PMathError = No_Error;
 
@@ -38,9 +40,20 @@ void Showing_PMathError(unsigned short int PMathError)
         printf("%c%s%c", '\a', "Error: From <Calculating_Multiples> \"The Argument <From> Does Not Have To Be Greater Than Argument <To> Or Equal\".", '\n');
         break;
     }
+    case Error_1388:
+    {
+        printf("%c%s%c", '\a', "Error: From <Calculating_ArithmeticMean> \"The Argument <NumberOfNumbers> Does Not Have To Be Zero\".", '\n');
+        break;
+    }
+    case Error_1389:
+    {
+        printf("%c%s%c", '\a', "Error: From <Calculating_ArithmeticMean> \"The Argument <NumberOfNumbers> Does Not Have To Be Lesser Than One\".", '\n');
+        break;
+    }
     default:
     {
-        printf("%c%s%c", '\a', "Error : The Errro Code Not Supported.", '\n');
+        printf("%c%s%c", '\a', "Error: The Errro Code Not Supported.", '\n');
+        break;
     }
     }
 }
