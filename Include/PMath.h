@@ -147,7 +147,7 @@ long double Calculating_ArithmeticMean(long double *Numbers, long long int Numbe
     }
 }
 
-
+// This Function Will Calculate WeightedArithmeticMean Of Argument <Numbers> With Weight Of Argument <WeightOfNumbers> And Return It In The Output Of Function
 long double Calculating_WeightedArithmeticMean(long double *Numbers, long double *WeightOfNumbers, long long int NumberOfNumbers)
 {
     if (NumberOfNumbers == (long long int)0)
