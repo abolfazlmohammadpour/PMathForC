@@ -8,6 +8,8 @@
 #define Error_1387 (unsigned short int)1387
 #define Error_1388 (unsigned short int)1388
 #define Error_1389 (unsigned short int)1389
+#define Error_1390 (unsigned short int)1390
+#define Error_1391 (unsigned short int)1391
 
 unsigned short int PMathError = No_Error;
 
@@ -48,6 +50,16 @@ void Showing_PMathError(unsigned short int PMathError)
     case Error_1389:
     {
         printf("%c%s%c", '\a', "Error: From <Calculating_ArithmeticMean> \"The Argument <NumberOfNumbers> Does Not Have To Be Lesser Than One\".", '\n');
+        break;
+    }
+    case Error_1390:
+    {
+        printf("%c%s%c", '\a', "Error: From <Calculating_WeightedArithmeticMean> \"The Argument <NumberOfNumbers> Does Not Have To Be Zero\".", '\n');
+        break;
+    }
+    case Error_1391:
+    {
+        printf("%c%s%c", '\a', "Error: From <Calculating_WeightedArithmeticMean> \"The Argument <NumberOfNumbers> Does Not Have To Be Lesser Than One\".", '\n');
         break;
     }
     default:
