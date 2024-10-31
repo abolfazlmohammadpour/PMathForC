@@ -215,6 +215,60 @@ The Arithmetic Mean Of (10.000000, 20.000000, 30.000000, 37.600000, 85.300000) I
 
 ---
 
+### Calculating WeightedArithmeticMean Of Numners With PMath
+Source/main.c
+```c
+#include <stdio.h>
+
+#include "./../Include/PMath.h"
+
+int main(int argc, const char *argv[])
+{
+    long long int NumberOfNumbers = (long long int)5;
+    long double Numbers[5] = {(long double)10.0, (long double)20.0, (long double)37.0, (long double)86.2, (long double)3.7};
+    long double WeightOfNumbers[5] = {(long double)2.0, (long double)8.0, (long double)3.0, (long double)6.0, (long double)4.0};
+    long double TheWeightedArithmeticMean = (long double)0.0;
+
+    printf("%s", "The WeightedArithmeticMean Of (");
+    for (long long int Counter = (long long int)0; Counter < NumberOfNumbers; Counter += (long long int)1)
+    {
+        if (((Counter + (long long int)1) == NumberOfNumbers))
+        {
+            printf("%Lf%s", Numbers[Counter], ")");
+        }
+        else
+        {
+            printf("%Lf%s", Numbers[Counter], ", ");
+        }
+    }
+    printf("%s", " With These Weights ");
+    printf("%s", "(");
+    for (long long int Counter = (long long int)0; Counter < NumberOfNumbers; Counter += (long long int)1)
+    {
+        if (((Counter + (long long int)1) == NumberOfNumbers))
+        {
+            printf("%Lf%s", WeightOfNumbers[Counter], ")");
+        }
+        else
+        {
+            printf("%Lf%s", WeightOfNumbers[Counter], ", ");
+        }
+    }
+    printf("%s",") Is : ");
+
+    TheWeightedArithmeticMean = Calculating_WeightedArithmeticMean(Numbers, WeightOfNumbers, NumberOfNumbers);
+    printf("%Lf%c", TheWeightedArithmeticMean, '\n');
+
+    return (int)0;
+}
+```
+Output/main.out
+```
+The WeightedArithmeticMean Of (10.000000, 20.000000, 37.000000, 86.200000, 3.700000) With These Weights (2.000000, 8.000000, 3.000000, 6.000000, 4.000000)) Is : 35.782609
+```
+
+---
+
 
 
 
