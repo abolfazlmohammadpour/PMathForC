@@ -124,12 +124,12 @@ long double Calculating_ArithmeticMean(long double *Numbers, long long int Numbe
     if (NumberOfNumbers == (long long int)0)
     {
         Exiting_WithError(Error_1388);
-        return (long double)0;
+        return (long double)0.0;
     }
     else if (NumberOfNumbers < (long long int)0)
     {
         Exiting_WithError(Error_1389);
-        return (long double)0;
+        return (long double)0.0;
     }
     else
     {
@@ -144,5 +144,39 @@ long double Calculating_ArithmeticMean(long double *Numbers, long long int Numbe
         ArithmeticMeanOfNumbers = SumOfNumbers / NumberOfNumbers;
 
         return ArithmeticMeanOfNumbers;
+    }
+}
+
+
+long double Calculating_WeightedArithmeticMean(long double *Numbers, long double *WeightOfNumbers, long long int NumberOfNumbers)
+{
+    if (NumberOfNumbers == (long long int)0)
+    {
+        Exiting_WithError(Error_1390);
+        return (long double)0.0;
+    }
+    else if (NumberOfNumbers < (long long int)0)
+    {
+        Exiting_WithError(Error_1391);
+        return (long double)0.0;
+    }
+    else
+    {
+        long double SumOfNumbers = (long double)0.0;
+        long double SumOfWeightOfNumbers = (long double)0.0;
+        long double WeightedArithmeticMeanOfNumbers = (long double)0.0;
+
+        for (long long int Counter = (long long int)0; Counter < NumberOfNumbers; Counter += (long long int)1)
+        {
+            SumOfNumbers += ((*(Numbers + Counter)) * (*(WeightOfNumbers + Counter)));
+        }
+        for (long long int Counter = (long long int)0; Counter < NumberOfNumbers; Counter += (long long int)1)
+        {
+            SumOfWeightOfNumbers += *(WeightOfNumbers + Counter);
+        }
+
+        WeightedArithmeticMeanOfNumbers = SumOfNumbers / SumOfWeightOfNumbers;
+
+        return WeightedArithmeticMeanOfNumbers;
     }
 }
