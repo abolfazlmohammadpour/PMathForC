@@ -1,3 +1,7 @@
-Build/
-Output/
 Source/main.c
+CMakeFiles/
+CMakeLists.txt
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+main
