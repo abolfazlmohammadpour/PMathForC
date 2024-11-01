@@ -211,3 +211,31 @@ long double Calculating_GeometricMean(long double *Numbers, long long int Number
         return TheGeometricMeanOfNumbers;
     }
 }
+
+long double Calculating_HarmonicMean(long double *Numbers, long long int NumberOfNumbers)
+{
+    if (NumberOfNumbers == (long long int)0)
+    {
+        Exiting_WithError(Error_1394);
+        return (long double)0.0;
+    }
+    else if (NumberOfNumbers < (long long int)0)
+    {
+        Exiting_WithError(Error_1395);
+        return (long double)0.0;
+    }
+    else
+    {
+        long double TotalOfNumbers = (long double)0.0;
+        long double TheHarmonicMean = (long double)0.0;
+
+        for (long long int Counter = (long long int)0; Counter < NumberOfNumbers; Counter += (long long int)1)
+        {
+            TotalOfNumbers += ((long double)1.0 / (*(Numbers + Counter)));
+        }
+
+        TheHarmonicMean = ((long double)NumberOfNumbers / TotalOfNumbers);
+
+        return TheHarmonicMean;
+    }
+}
