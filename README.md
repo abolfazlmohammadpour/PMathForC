@@ -308,6 +308,45 @@ GeometricMean Of These Numbers (5.200000, 8.100000, 7.600000, 4.100000, 9.300000
 
 ---
 
+### Calculating HarmonicMean Of Numners With PMath
+Source/main.c
+```c
+#include <stdio.h>
+
+#include "./../Include/PMath.h"
+
+int main(int argc, const char *argv[])
+{
+    long double Numbers[5] = {(long double)5.2, (long double)8.1, (long double)7.6, (long double)4.1, (long double)9.3};
+    long long int NumberOfNumbers = (long long int)5;
+    long double TheHarmonicMean = (long double)0.0;
+
+    printf("%s", "HarmonicMean Of These Numbers (");
+    for (long long int Counter = (long long int)0; Counter < NumberOfNumbers; Counter += (long long int)1)
+    {
+        if (((Counter + (long long int)1) == NumberOfNumbers))
+        {
+            printf("%Lf%s", Numbers[Counter], ")");
+        }
+        else
+        {
+            printf("%Lf%s", Numbers[Counter], ", ");
+        }
+    }
+
+    TheHarmonicMean = Calculating_HarmonicMean(Numbers, NumberOfNumbers);
+    printf("%s%Lf%c", " Is : ", TheHarmonicMean, '\n');
+
+    return (int)0;
+}
+```
+Output/main.out
+```
+HarmonicMean Of These Numbers (5.200000, 8.100000, 7.600000, 4.100000, 9.300000) Is : 6.259603
+```
+
+---
+
 
 
 
