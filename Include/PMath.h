@@ -1,3 +1,5 @@
+#include <math.h>
+
 #include "./PMathError.h"
 
 // This Function Calculates The Number Of Divisors Of The Argument <Number> And Places It In Value Of Argument <NumberOfDivisors>
@@ -138,7 +140,7 @@ long double Calculating_ArithmeticMean(long double *Numbers, long long int Numbe
 
         for (long long int Counter = (long long int)0; Counter < NumberOfNumbers; Counter += (long long int)1)
         {
-            SumOfNumbers += *(Numbers + Counter);
+            SumOfNumbers += (long double)(*(Numbers + Counter));
         }
 
         ArithmeticMeanOfNumbers = SumOfNumbers / NumberOfNumbers;
@@ -168,15 +170,44 @@ long double Calculating_WeightedArithmeticMean(long double *Numbers, long double
 
         for (long long int Counter = (long long int)0; Counter < NumberOfNumbers; Counter += (long long int)1)
         {
-            SumOfNumbers += ((*(Numbers + Counter)) * (*(WeightOfNumbers + Counter)));
+            SumOfNumbers += (long double)((*(Numbers + Counter)) * (*(WeightOfNumbers + Counter)));
         }
         for (long long int Counter = (long long int)0; Counter < NumberOfNumbers; Counter += (long long int)1)
         {
-            SumOfWeightOfNumbers += *(WeightOfNumbers + Counter);
+            SumOfWeightOfNumbers += (long double)(*(WeightOfNumbers + Counter));
         }
 
         WeightedArithmeticMeanOfNumbers = SumOfNumbers / SumOfWeightOfNumbers;
 
         return WeightedArithmeticMeanOfNumbers;
+    }
+}
+
+// This Function Will Calculate GeometricMean Of Argument <Numbers> And Returns The GeometricMean In The Output
+long double Calculating_GeometricMean(long double *Numbers, long long int NumberOfNumbers)
+{
+    if (NumberOfNumbers == (long long int)0)
+    {
+        Exiting_WithError(Error_1392);
+        return (long double)0.0;
+    }
+    else if (NumberOfNumbers < (long long int)0)
+    {
+        Exiting_WithError(Error_1393);
+        return (long double)0.0;
+    }
+    else
+    {
+        long double TheMultipliedOfNumbers = (long double)1.0;
+        long double TheGeometricMeanOfNumbers = (long double)0.0;
+
+        for (long long int Counter = (long long int)0; Counter < NumberOfNumbers; Counter += (long long int)1)
+        {
+            TheMultipliedOfNumbers *= (long double)(*(Numbers + Counter));
+        }
+
+        TheGeometricMeanOfNumbers = powl(TheMultipliedOfNumbers, (long double)((long double)1 / (long double)NumberOfNumbers));
+
+        return TheGeometricMeanOfNumbers;
     }
 }
