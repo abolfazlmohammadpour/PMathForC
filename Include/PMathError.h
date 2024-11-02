@@ -14,6 +14,8 @@
 #define Error_1393 (unsigned short int)1393
 #define Error_1394 (unsigned short int)1394
 #define Error_1395 (unsigned short int)1395
+#define Error_1396 (unsigned short int)1396
+#define Error_1397 (unsigned short int)1397
 
 unsigned short int PMathError = No_Error;
 
@@ -84,6 +86,16 @@ void Showing_PMathError(unsigned short int PMathError)
     case Error_1395:
     {
         printf("%c%s%c", '\a', "Error: From <Calculating_HarmonicMean> \"The Argument <NumberOfNumbers> Does Not Have To Be Lesser Than One\".", '\n');
+        break;
+    }
+    case Error_1396:
+    {
+        printf("%c%s%c", '\a', "Error: From <Calculating_Median> \"The Argument <NumberOfNumbers> Does Not Have To Be Zero\".", '\n');
+        break;
+    }
+    case Error_1397:
+    {
+        printf("%c%s%c", '\a', "Error: From <Calculating_Median> \"The Argument <NumberOfNumbers> Does Not Have To Be Lesser Than One\".", '\n');
         break;
     }
     default:
