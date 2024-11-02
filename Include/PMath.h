@@ -1,4 +1,5 @@
 #include <math.h>
+#include <stdlib.h>
 
 #include "./PMathError.h"
 
@@ -212,6 +213,7 @@ long double Calculating_GeometricMean(long double *Numbers, long long int Number
     }
 }
 
+// This Function Will Calculate HarmonicMean Of Argument <Numbers> With Size Of Argument <NumberOfNumbers> And Will Return The HarmonicMean As A Long Double Value In The Output
 long double Calculating_HarmonicMean(long double *Numbers, long long int NumberOfNumbers)
 {
     if (NumberOfNumbers == (long long int)0)
@@ -237,5 +239,58 @@ long double Calculating_HarmonicMean(long double *Numbers, long long int NumberO
         TheHarmonicMean = ((long double)NumberOfNumbers / TotalOfNumbers);
 
         return TheHarmonicMean;
+    }
+}
+
+// This Function Will Calculate Median Of Argument <Numbers> With Size Of Argument<NumberOfNumbers> And Finally Will Return The Calculated Median As A Long Double Value In Output Of The Function
+long double Calculating_Median(long double *Numbers, long long int NumberOfNumbers)
+{
+    if (NumberOfNumbers == (long long int)0)
+    {
+        Exiting_WithError(Error_1396);
+        return (long double)0.0;
+    }
+    else if (NumberOfNumbers < (long long int)0)
+    {
+        Exiting_WithError(Error_1397);
+    }
+    else
+    {
+        long double *TheAscendingSortedNumbers = (long double *)calloc((size_t)NumberOfNumbers, (size_t)sizeof(long double *));
+        long double TheMedianOfNumbers = (long double)0.0;
+
+        for (long long int Counter = (long long int)0; Counter < NumberOfNumbers; Counter += (long long int)1)
+        {
+            TheAscendingSortedNumbers[Counter] = Numbers[Counter];
+        }
+
+        long double TheTemperatureNumber = (long double)0.0;
+
+        for (long long int CounterOne = (long long int)0; CounterOne < NumberOfNumbers; CounterOne += (long long int)1)
+        {
+            for (long long int CounterTwo = (long long int)0; CounterTwo < NumberOfNumbers; CounterTwo += (long long int)1)
+            {
+                if (TheAscendingSortedNumbers[CounterOne] < TheAscendingSortedNumbers[CounterTwo])
+                {
+                    TheTemperatureNumber = TheAscendingSortedNumbers[CounterTwo];
+                    TheAscendingSortedNumbers[CounterTwo] = TheAscendingSortedNumbers[CounterOne];
+                    TheAscendingSortedNumbers[CounterOne] = TheTemperatureNumber;
+                }
+            }
+        }
+
+        if (((NumberOfNumbers % (long long int)2) == (long long int)0))
+        {
+            TheMedianOfNumbers = (TheAscendingSortedNumbers[((NumberOfNumbers / (long long int)2) - (long long int)1)] + TheAscendingSortedNumbers[(((NumberOfNumbers / (long long int)2) + (long long int)1) - (long long int)1)]);
+            TheMedianOfNumbers = TheMedianOfNumbers / (long double)2;
+
+            return TheMedianOfNumbers;
+        }
+        else
+        {
+            TheMedianOfNumbers = TheAscendingSortedNumbers[(((NumberOfNumbers / (long long int)2) + (long long int)1) - (long long int)1)];
+
+            return TheMedianOfNumbers;
+        }
     }
 }
